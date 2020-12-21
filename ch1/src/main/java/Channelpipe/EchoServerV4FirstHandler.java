@@ -12,5 +12,6 @@ public class EchoServerV4FirstHandler extends ChannelInboundHandlerAdapter {
         ByteBuf readMessage = (ByteBuf) msg;
         System.out.println("FirstHandler channelRead : " + readMessage.toString(Charset.defaultCharset()));
         ctx.write(msg);
+        ctx.fireChannelRead(msg);
     }
 }
